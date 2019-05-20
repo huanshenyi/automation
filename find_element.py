@@ -8,8 +8,8 @@ class FindElement(object):
     def get_element(self, key):
         read_ini = ReadIni()
         data = read_ini.get_value(key)
-        by = data.spilt(">")[0]
-        value = data.spilt('>')[1]
+        by = data.split(">")[0]
+        value = data.split('>')[1]
         try:
             if by == "id":
                 return self.driver.find_element_by_id(value)
@@ -21,4 +21,8 @@ class FindElement(object):
                 return self.driver.find_element_by_class_name(value)
         except:
             return None
+
+if __name__ == '__main__':
+    test = FindElement()
+    test.get_element("register_button")
 

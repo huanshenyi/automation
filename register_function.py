@@ -88,12 +88,15 @@ class RegisterFunction(object):
     def main(self):
         user_name_info = self.get_range_user()
         user_email = user_name_info + "@gmail.com"
-        file_name = os.path.abspath(os.getcwd()) + "\\img\\test02.png"
-        code_text = self.code_local(file_name)
+        if platform.platform().startswith("Windows"):
+            file_name = os.path.abspath(os.getcwd()) + "\\img\\test02.png"
+        else:
+            file_name = os.path.abspath(os.getcwd()) + "/img/test02.png"
+        # code_text = self.code_local(file_name)
         self.send_user_info("user_email", user_email)
         self.send_user_info("user_name", user_name_info)
         self.send_user_info("password", "111111")
-        self.send_user_info("code_text", code_text)
+        self.send_user_info("code_text", 111)
         self.get_user_element("register_button").click()
         time.sleep(5)
         self.driver.close()
