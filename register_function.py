@@ -16,17 +16,27 @@ import time
 
 
 if platform.platform().startswith("Windows"):
-    driver_path = os.path.abspath(os.getcwd()) + "\chromedriver.exe"
+    driver_path = os.path.abspath(os.getcwd()) + r"\driver\chromedriver.exe"
+    driver_path2 = os.path.abspath(os.getcwd()) + r"\driver\geckodriver.exe"
+    driver_path1 = os.path.abspath(os.getcwd()) + r"\driver\IEDriverServer.exe"
 else:
-    driver_path = os.path.abspath(os.getcwd()) + "/chromedriver"
+    driver_path = os.path.abspath(os.getcwd()) + "/driver/chromedriver"
+
 
 class RegisterFunction(object):
-    def __init__(self, url):
-        self.driver = self.get_driver(url)
+    def __init__(self, url, i):
+        self.driver = self.get_driver(url, i)
 
     # driverを取得,ブラウザ開く
-    def get_driver(self, url):
-        driver = webdriver.Chrome(executable_path=driver_path)
+    def get_driver(self, url, i):
+        if i == 1:
+           driver = webdriver.Chrome(executable_path=driver_path)
+        else:
+           driver = webdriver.Firefox(executable_path=driver_path2)
+        # else:
+        #    driver = webdriver.Ie(executable_path=driver_path1)
+        # driver1 = webdriver.Edge()
+        # driver2 = webdriver.Firefox(executable_path=driver_path2)
         driver.get(url)
         driver.maximize_window()
         return driver
@@ -85,6 +95,8 @@ class RegisterFunction(object):
         print(text)
         return text
 
+
+
     def main(self):
         user_name_info = self.get_range_user()
         user_email = user_name_info + "@gmail.com"
@@ -98,11 +110,21 @@ class RegisterFunction(object):
         self.send_user_info("password", "111111")
         self.send_user_info("code_text", 111)
         self.get_user_element("register_button").click()
+        code_error = self.get_user_element("code_text_error")
+        if code_error == None:
+            print("新規登録成功")
+        else:
+            if platform.platform().startswith("Windows"):
+                self.driver.save_screenshot(os.path.abspath(os.getcwd())+"\img\codeerror.png")
+            else:
+                self.driver.save_screenshot(os.path.abspath(os.getcwd())+"/img/codeerror.png")
+            self.driver.save_screenshot("codeerror.png")
         time.sleep(5)
         self.driver.close()
 
 if __name__ == '__main__':
-    tt = RegisterFunction("http://www.5itest.cn/register")
-    tt.main()
+    for i in range(2):
+        tt = RegisterFunction("http://www.5itest.cn/register", i)
+        tt.main()
 
 
