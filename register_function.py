@@ -10,7 +10,7 @@ from PIL import Image
 from ShowapiRequest import ShowapiRequest
 # 無料で精度悪い認識ライブラリ
 import pytesseract
-from find_element import FindElement
+from base.find_element import FindElement
 import random
 import time
 
