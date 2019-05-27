@@ -3,6 +3,8 @@ from selenium import webdriver
 import os
 import unittest
 import HTMLTestRunner
+import time
+import sys
 
 driver_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\driver\chromedriver.exe"
 
@@ -11,9 +13,20 @@ class FirstCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=driver_path)
         self.driver.get('http://www.5itest.cn/register')
+        self.driver.maximize_window()
         self.login = RegisterBusiness(self.driver)
 
     def tearDown(self):
+        # self.driver.save_screenshot()
+        time.sleep(2)
+        # sys.exc_info()[0]:
+        for method_name,error in self._outcome.errors:
+            if error:
+                # caseの名前を取得
+                case_name = self._testMethodName
+                file_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\report\%s.png" % case_name
+                self.driver.save_screenshot(file_path)
+
         self.driver.close()
         self.driver.quit()
 
@@ -57,4 +70,14 @@ class FirstCase(unittest.TestCase):
 #     first.test_login_success()
 
 if __name__=='__main__':
-    unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTest(FirstCase('test_login_email_error'))
+    suite.addTest(FirstCase('test_login_username_error'))
+    suite.addTest(FirstCase('test_login_password_error'))
+    # unittest.TextTestRunner().run(suite)
+    # unittest.main()
+    file_path = os.path.abspath(os.path.join(os.getcwd(), ".."))+r"\report\first_case.html"
+    file = open(file_path, 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=file, title="This is first report",
+                                  description="最初レポート", verbosity=2)
+    runner.run(suite)
