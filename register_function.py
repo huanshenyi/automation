@@ -7,7 +7,7 @@ import platform
 # 画像処理用のライブラリ
 from PIL import Image
 # 有料きゃっぷちゃ認識
-from ShowapiRequest import ShowapiRequest
+from util.ShowapiRequest import ShowapiRequest
 # 無料で精度悪い認識ライブラリ
 import pytesseract
 from base.find_element import FindElement

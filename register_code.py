@@ -4,7 +4,7 @@ import os
 import random
 # pip install Pillow
 from PIL import Image
-from ShowapiRequest import ShowapiRequest
+from util.ShowapiRequest import ShowapiRequest
 import pytesseract
 import platform
 

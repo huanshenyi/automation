@@ -8,9 +8,9 @@ class ReadIni(object):
     def __init__(self, file_name=None, node=None):
         if file_name == None:
             if platform.platform().startswith("Windows"):
-               file_name = os.path.abspath(os.path.join(os.getcwd(),'..'))+r"\config\LocalElement.ini"
+               file_name = os.path.abspath(os.path.join(os.getcwd(), '..'))+r"\config\LocalElement.ini"
             else:
-               file_name = os.path.abspath(os.path.join(os.getcwd(),'..')) + r"/config/LocalElement.ini"
+               file_name = os.path.abspath(os.path.join(os.getcwd(), '..')) + r"/config/LocalElement.ini"
                # file_name = "/Users/tianxiaoyi/spider/automation/config/LocalElement.ini"
 
         if node == None:

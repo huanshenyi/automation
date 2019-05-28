@@ -1,5 +1,5 @@
 from util.read_ini import ReadIni
-
+import os
 
 class FindElement(object):
     def __init__(self, driver):
@@ -20,6 +20,8 @@ class FindElement(object):
             elif by == "className":
                 return self.driver.find_element_by_class_name(value)
         except:
+            # file_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\img\%s.png" % value
+            # self.driver.save_screenshot(file_path)
             return None
 
 if __name__ == '__main__':

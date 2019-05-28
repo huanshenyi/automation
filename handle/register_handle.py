@@ -1,9 +1,10 @@
 from page.register_page import RegisterPage
-
+from util.get_code import GetCode
 
 class RegisterHandle(object):
     def __init__(self, driver):
-        self.register_p = RegisterPage(driver)
+        self.driver = driver
+        self.register_p = RegisterPage(self.driver)
 
     # メールアドレス入力
     def send_user_email(self, email):
@@ -18,19 +19,27 @@ class RegisterHandle(object):
         self.register_p.get_password_element().send_keys(password)
 
     # キャップチャー入れ
-    def send_user_code(self, code):
-        self.register_p.get_code_element().send_keys(code)
+    def send_user_code(self, file_name):
+        # キャップチァーcode取得用
+        # get_code_text = GetCode(self.driver)
+
+        # code = get_code_text.code_online(file_name)
+        # code = get_code_text.code_local(file_name)
+        self.register_p.get_code_element().send_keys(file_name)
 
     # 文字データを取得
     def get_user_text(self, info, user_info):
-        if info == "email_error":
-            text = self.register_p.get_email_error_element().get_attribute('value')
-        elif info == "name_error":
-            text = self.register_p.get_name_error_element().get_attribute('value')
-        elif info == "password_error":
-            text = self.register_p.get_password_error_element().get_attribute('value')
-        else:
-            text = self.register_p.get_code_error_element().get_attribute('value')
+        try:
+            if info == "email_error":
+                text = self.register_p.get_email_error_element().text
+            elif info == "name_error":
+                text = self.register_p.get_name_error_element().text
+            elif info == "password_error":
+                text = self.register_p.get_password_error_element().text
+            else:
+                text = self.register_p.get_code_error_element().text
+        except:
+          text = None
         return text
     # 新規登録ボタン
     def click_register_button(self):

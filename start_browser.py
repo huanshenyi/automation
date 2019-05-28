@@ -1,9 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
 import os
-import random
 from selenium.webdriver.chrome.options import Options
-from ShowapiRequest import ShowapiRequest
+from util.ShowapiRequest import ShowapiRequest
 import time
 
 
