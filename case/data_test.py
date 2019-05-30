@@ -10,7 +10,7 @@ class DataTest(unittest.TestCase):
     def tearDown(self):
         print("これはtearDown")
 
-    # 1,2  3,4   5,6
+    # メール、ユーザーネーム、パスワード、キャップちゃ,エラーメッセージのエレメント要素,エラーメッセージ
     @ddt.data(
         ["1", "2"],
         ["3", "4"],

@@ -85,8 +85,8 @@ class FirstCase(unittest.TestCase):
 if __name__=='__main__':
     suite = unittest.TestSuite()
     suite.addTest(FirstCase('test_login_email_error'))
-    # suite.addTest(FirstCase('test_login_username_error'))
-    # suite.addTest(FirstCase('test_login_password_error'))
+    suite.addTest(FirstCase('test_login_username_error'))
+    suite.addTest(FirstCase('test_login_password_error'))
     # unittest.TextTestRunner().run(suite)
     # unittest.main()
     file_path = os.path.abspath(os.path.join(os.getcwd(), ".."))+r"\report\first_case.html"

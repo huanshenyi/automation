@@ -27,6 +27,15 @@ class RegisterBusiness(object):
         else:
            return False
 
+    # 合計操作
+    def register_function(self, email, username, password, code, assertCode, assertText):
+        self.user_base(email, username, password, code)
+        if self.register_h.get_user_text(assertCode, assertText) is None:
+            # print("メールnook")
+            return True
+        else:
+            return False
+
     # nameエラー
     def login_name_error(self, email, name, password, file_name):
         self.user_base(email, name, password, file_name)

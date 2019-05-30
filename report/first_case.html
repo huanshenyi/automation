@@ -333,9 +333,9 @@ function hide_img(obj){
 </div>
 <div class='heading'>
 <h1>This is first report</h1>
-<p class='attribute'><strong>开始时间:</strong> 2019-05-28 22:41:17</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:37.448423</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj failCase">Failure</span>1</p>
+<p class='attribute'><strong>スタートタイム:</strong> 2019-05-29 20:22:46</p>
+<p class='attribute'><strong>消耗時間:</strong> 0:01:56.974744</p>
+<p class='attribute'><strong>ステータス:</strong> <span class="tj passCase">Pass</span>2 <span class="tj failCase">Failure</span>1</p>
 
 <p class='description'>最初レポート</p>
 </div>
@@ -357,22 +357,22 @@ function hide_img(obj){
 <col align='right' />
 </colgroup>
 <tr id='header_row'>
-    <th>测试组/测试用例</th>
-    <th>总数</th>
-    <th>通过</th>
-    <th>失败</th>
-    <th>错误</th>
-    <th>视图</th>
-    <th>错误截图</th>
+    <th>テストグループ/テストサンプル</th>
+    <th>合計</th>
+    <th>通過</th>
+    <th>失敗</th>
+    <th>エラー</th>
+    <th>ビュー</th>
+    <th>エラースクショ</th>
 </tr>
 
 <tr class='failClass'>
     <td>FirstCase</td>
+    <td>3</td>
+    <td>2</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+    <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
@@ -401,13 +401,25 @@ AssertionError: True is not false : case実行
     </div>
     <!--css div popup end-->
     </td>
-    <td>无截图</td>
+    <td>ノースクリーンショット</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td><div class='testcase'>test_login_username_error</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通過</span></td>
+    <td>ノースクリーンショット</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td><div class='testcase'>test_login_password_error</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通過</span></td>
+    <td>ノースクリーンショット</td>
 </tr>
 
 <tr id='total_row'>
     <th>統計</th>
-    <th>1</th>
-    <th>0</th>
+    <th>3</th>
+    <th>2</th>
     <th>1</th>
     <th>0</th>
     <th>&nbsp;</th>
@@ -416,7 +428,7 @@ AssertionError: True is not false : case実行
 </table>
 <script>
     showCase(1);
-    drawCircle(0, 1, 0);
+    drawCircle(2, 1, 0);
 </script>
 
 <div id='ending'>&nbsp;</div>
