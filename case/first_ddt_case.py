@@ -6,7 +6,10 @@ from business.register_business import RegisterBusiness
 from selenium import webdriver
 import HTMLTestRunner
 import time
+from util.excel_util import ExcelUtil
 
+ex = ExcelUtil()
+data = ex.get_data()
 
 if platform.platform().startswith("Windows"):
     driver_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\driver\chromedriver.exe"
@@ -37,15 +40,25 @@ class FirstDbtCase(unittest.TestCase):
         self.driver.close()
 
     # 'email', 'username', 'password', 'code', 'assertCode', 'assertText'
-    @ddt.data(
-        ['123', 'huasdasd01', '1111111', 'code', 'register_email-error', '请输入有效的电子邮件地址'],
-        ['123@qq.com', 'huasdasd01', '1111111', 'code', 'register_email-error', '请输入有效的电子邮件地址']
-    )
+    # @ddt.data(
+    #     ['123', 'huasdasd01', '1111111', 'code', 'user_email_error', '请输入有效的电子邮件地址'],
+    #     ['123@qq.com', 'huasdasd01', '1111111', 'code', 'user_email_error-error', '请输入有效的电子邮件地址']
+    # )
+    @ddt.data(*data)
+
     @ddt.unpack
-    def test_register_case(self, email, username, password, code, assertCode, assertText):
+    # def test_register_case(self, email, username, password, code, assertCode, assertText):
+    def test_register_case(self, data):
+        email, username, password, code, assertCode, assertText = data
         email_error = self.login.register_function(email, username, password, code, assertCode, assertText)
-        return self.assertFalse(email_error, 'テスト失敗')
+        self.assertFalse(email_error, 'テスト失敗')
 
 
 if __name__ == '__main__':
-    unittest.main()
+    file_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\report\first_case1.html"
+    file = open(file_path, 'wb')
+    # 沢山のcaseの挿入TestLoader
+    suite = unittest.TestLoader().loadTestsFromTestCase(FirstDbtCase)
+    runner = HTMLTestRunner.HTMLTestRunner(stream=file, title="This is Ddt_first report",
+                                           description="ddt最初レポート", verbosity=2)
+    runner.run(suite)
