@@ -44,10 +44,10 @@ class FirstDbtCase(unittest.TestCase):
     #     ['123', 'huasdasd01', '1111111', 'code', 'user_email_error', '请输入有效的电子邮件地址'],
     #     ['123@qq.com', 'huasdasd01', '1111111', 'code', 'user_email_error-error', '请输入有效的电子邮件地址']
     # )
-    @ddt.data(*data)
 
-    @ddt.unpack
+    # @ddt.unpack
     # def test_register_case(self, email, username, password, code, assertCode, assertText):
+    @ddt.data(*data)
     def test_register_case(self, data):
         email, username, password, code, assertCode, assertText = data
         email_error = self.login.register_function(email, username, password, code, assertCode, assertText)
