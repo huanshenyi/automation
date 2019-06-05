@@ -30,9 +30,9 @@ class RegisterHandle(object):
     # 文字データを取得
     def get_user_text(self, info, user_info):
         try:
-            if info == "email_error":
+            if info == "user_email_error":
                 text = self.register_p.get_email_error_element().text
-            elif info == "name_error":
+            elif info == "user_name_error":
                 text = self.register_p.get_name_error_element().text
             elif info == "password_error":
                 text = self.register_p.get_password_error_element().text
