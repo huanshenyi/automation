@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b725586-fe4f-40fe-948a-1988ae77b370" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/case/keyword_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/_trial_temp.lock/symlink" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/_trial_temp/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/case/_trial_temp/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handle/register_handle.py" beforeDir="false" afterPath="$PROJECT_DIR$/handle/register_handle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/first_case.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/test_login_email_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/keyword_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/keyword_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/keyworld.xls" beforeDir="false" afterPath="$PROJECT_DIR$/config/keyworld.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyword/actionMethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/keywordselenium/actionMethod.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +21,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/first_ddt_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="522">
               <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -39,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/excel_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="18">
               <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
               <folding>
                 <element signature="e#19#30#0" expanded="true" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/keyword_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            <state relative-caret-position="-132">
+              <caret line="26" column="69" lean-forward="true" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
               <folding>
                 <element signature="e#15#52#0" expanded="true" />
               </folding>
@@ -60,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/keyword/actionMethod.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/keywordselenium/actionMethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="144">
+              <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -120,16 +117,17 @@
         <option value="$PROJECT_DIR$/case/first_ddt_case.py" />
         <option value="$PROJECT_DIR$/keyword/__init__.py" />
         <option value="$PROJECT_DIR$/keyword/actionMethod.py" />
-        <option value="$PROJECT_DIR$/case/keyword_case.py" />
         <option value="$PROJECT_DIR$/util/excel_util.py" />
+        <option value="$PROJECT_DIR$/case/keyword_case.py" />
+        <option value="$PROJECT_DIR$/keywordselenium/actionMethod.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="91" />
-    <option name="y" value="-29" />
+    <option name="x" value="175" />
+    <option name="y" value="76" />
     <option name="width" value="1731" />
-    <option name="height" value="929" />
+    <option name="height" value="930" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -149,16 +147,6 @@
               <item name="automation" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="automation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automation" type="462c0819:PsiDirectoryNode" />
-              <item name="keyword" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="automation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="automation" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -170,7 +158,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/rbrl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../python/sample" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -203,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.first_ddt_case">
+  <component name="RunManager" selected="Python.keyword_case">
     <configuration name="first_case.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/automation/report/first_case.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -343,9 +331,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.keyword_case" />
         <item itemvalue="Python tests.Twisted Trial in first_ddt_case.py" />
         <item itemvalue="Python.excel_util" />
-        <item itemvalue="Python.keyword_case" />
         <item itemvalue="Python.first_case" />
         <item itemvalue="JavaScript Debug.first_case.html" />
       </list>
@@ -402,7 +390,8 @@
       <workItem from="1559601687428" duration="596000" />
       <workItem from="1559643844876" duration="6346000" />
       <workItem from="1559654862186" duration="694000" />
-      <workItem from="1559728899991" duration="2049000" />
+      <workItem from="1559728899991" duration="2652000" />
+      <workItem from="1559815666816" duration="5229000" />
     </task>
     <servers />
   </component>
@@ -439,7 +428,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186805000" />
+    <option name="totallyTimeSpent" value="192637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,15 +440,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23201293" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23605497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="aws.explorer" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6294326" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41666666" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -487,7 +477,7 @@
     <SUITE FILE_PATH="coverage/automation$first_ddt_case.coverage" NAME="first_ddt_case Coverage Results" MODIFIED="1559729472515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/automation$run_case.coverage" NAME="Twisted Trial in run_case.py Coverage Results" MODIFIED="1558875582576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/automation$unittest_case.coverage" NAME="unittest_case Coverage Results" MODIFIED="1558858954618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/automation$keyword_case.coverage" NAME="keyword_case Coverage Results" MODIFIED="1559657648808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/automation$keyword_case.coverage" NAME="keyword_case Coverage Results" MODIFIED="1559827168105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/automation$register_function.coverage" NAME="register_function Coverage Results" MODIFIED="1558355289883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/automation$Twisted_Trial_in_first_ddt_case_py.coverage" NAME="Twisted Trial in first_ddt_case.py Coverage Results" MODIFIED="1559729274157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/automation$read_ini__1_.coverage" NAME="read_ini (1) Coverage Results" MODIFIED="1558309867052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
@@ -718,29 +708,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keyword/actionMethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/keyword_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#15#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/excel_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="18">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
             <element signature="e#19#30#0" expanded="true" />
@@ -750,10 +720,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/case/first_ddt_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="522">
           <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/keyword_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="26" column="69" lean-forward="true" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+          <folding>
+            <element signature="e#15#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keywordselenium/actionMethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

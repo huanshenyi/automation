@@ -1,12 +1,13 @@
 # coding=utf-8
 from util.excel_util import ExcelUtil
-from keyword.actionMethod import ActionMethod
+from keywordselenium.actionMethod import ActionMethod
 import os
 
 
 ex_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\config\keyworld.xls"
 class KeywordCase:
     def run_main(self):
+        self.action_method = ActionMethod()
         handle_excel = ExcelUtil(ex_path)
         # 行数を取得
         case_lines = handle_excel.get_lines()
@@ -35,10 +36,13 @@ class KeywordCase:
            # 入力データない
              # 実行方法(要素を操作)
     def run_method(self,method, send_value, hand_value):
-        action_method = ActionMethod()
         # ActionMethod中のmethodを取得
-        method_value = getattr(action_method, method)
+        method_value = getattr(self.action_method, method)
         if send_value:
             method_value(send_value, hand_value)
         else:
             method_value(hand_value)
+
+if __name__ == "__main__":
+    keyworldcase = KeywordCase()
+    keyworldcase.run_main()

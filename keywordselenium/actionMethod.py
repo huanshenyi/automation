@@ -26,7 +26,7 @@ class ActionMethod:
         return element
 
     # 要素の入力
-    def element_send_keys(self, key, value):
+    def element_send_keys(self, value, key):
         element = self.get_element(key)
         element.send_keys(value)
 
@@ -39,7 +39,7 @@ class ActionMethod:
         time.sleep(3)
 
     # ブラウザを閉じる
-    def close_browser(self):
+    def close_browser(self, driver):
         self.driver.close()
 
 
