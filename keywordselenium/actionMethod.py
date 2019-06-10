@@ -42,6 +42,10 @@ class ActionMethod:
     def close_browser(self, driver):
         self.driver.close()
 
+    # Url_titleを取得
+    def get_title(self):
+        return self.driver.title
+
 
 
 

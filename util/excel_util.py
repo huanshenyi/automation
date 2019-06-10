@@ -3,16 +3,19 @@ import xlrd
 # pip install xlutils
 from xlutils.copy import copy
 import os
+import time
 
 ex_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\config\casedata.xls"
 
 class ExcelUtil:
     def __init__(self, excel_path=None, index=None):
         if excel_path == None:
-            excel_path = ex_path
+            self.excel_path = ex_path
+        else:
+            self.excel_path = excel_path
         if index == None:
             index = 0
-        self.data = xlrd.open_workbook(excel_path)
+        self.data = xlrd.open_workbook(self.excel_path)
         self.table = self.data.sheets()[index]
 
     # 一行一つのリストとして.一つのリストに納入
@@ -43,10 +46,11 @@ class ExcelUtil:
 
     # データ入力
     def write_value(self, row, value):
-        read_value = self.data
+        read_value = xlrd.open_workbook(self.excel_path)
         write_data = copy(read_value)
-        write_data.get_sheet(0).write(row, 7, value)
-        write_data.save(os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\config\keyworld.xls")
+        write_data.get_sheet(0).write(row, 9, value)
+        write_data.save(self.excel_path)
+        time.sleep(1)
 
 if __name__ == '__main__':
     ex = ExcelUtil(os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\config\casedata.xls")

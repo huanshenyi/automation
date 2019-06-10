@@ -19,29 +19,57 @@ class KeywordCase:
                 if is_run == 'yes':
                     # 実行方法を取得
                     method = handle_excel.get_col_value(i, 4)
-                    # 実行方法を取得
+                    # 入力データを取得
                     send_value = handle_excel.get_col_value(i, 5)
-                    # 操作値を取得
+                    # 操作elementを取得
                     handle_value = handle_excel.get_col_value(i, 6)
+                    # 予想結果を取得
+                    except_result_method = handle_excel.get_col_value(i, 7)
+                    # 予想結果の値
+                    except_result = handle_excel.get_col_value(i, 8)
+                    # except_result_method と except_resultは '' である可能性はある
+
                     #if send_value:
                     self.run_method(method, send_value, handle_value)
+                    # もし予想結果の値が存在すれば
+                    if except_result != '':
+                        except_value = self.get_except_result_value(except_result)
+                        # もし予想結果のタイプはtext
+                        if except_value[0] == 'text':
+                            result = self.run_method(except_result_method)
+                            if except_value[1] in result:
+                                handle_excel.write_value(i, 'pass')
+                            else:
+                                handle_excel.write_value(i, 'fail')
+                        # もし予想結果はelementであれば
+                        elif except_value[0] == 'element':
+                            result = self.run_method(except_result_method, except_value[1])
+                            if result:
+                                handle_excel.write_value(i, 'pass')
+                            else:
+                                handle_excel.write_value(i, 'fail')
+                        else:
+                           print("no-else")
+                    else:
+                        print('予想結果ありません')
 
+    # 予想結果を取得
+    def get_except_result_value(self, data):
+        return data.split('=')
 
-
-
-
-           # 入力データを取得
-           # 入力データ存在するかどうか
-             # 実行方法(入力データ,要素を操作)
-           # 入力データない
-             # 実行方法(要素を操作)
-    def run_method(self,method, send_value, hand_value):
+    # method処理
+    def run_method(self, method, send_value='', hand_value=''):
         # ActionMethod中のmethodを取得
         method_value = getattr(self.action_method, method)
-        if send_value:
-            method_value(send_value, hand_value)
+        if send_value == '' and hand_value != '':
+            result = method_value(hand_value)
+        elif send_value is '' and hand_value is '':
+            result = method_value()
+        elif send_value != '' and hand_value == '':
+            result = method_value(send_value)
         else:
-            method_value(hand_value)
+            result = method_value(send_value, hand_value)
+        return result
 
 if __name__ == "__main__":
     keyworldcase = KeywordCase()
