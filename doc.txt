@@ -24,3 +24,5 @@ pip install xlutils //書く用
 pip install behave  //ddt
 
 pip install pyhamcrest
+
+pip install logging
