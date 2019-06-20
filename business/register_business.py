@@ -1,5 +1,8 @@
 from handle.register_handle import RegisterHandle
-
+import sys
+import os
+curPath = os.path.abspath(os.path.join(os.getcwd()))
+sys.path.append(curPath)
 
 class RegisterBusiness(object):
     def __init__(self, driver):

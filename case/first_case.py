@@ -1,3 +1,8 @@
+import sys
+import os
+curPath = os.path.abspath(os.path.join(os.getcwd()))
+sys.path.append(curPath)
+
 from business.register_business import RegisterBusiness
 from selenium import webdriver
 import os
@@ -6,11 +11,14 @@ import HTMLTestRunner
 import time
 import sys
 import platform
-
+from log.user_log import UserLog
 
 if platform.platform().startswith("Windows"):
+
     driver_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\driver\chromedriver.exe"
-    code_img_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\img\test001.png"
+    # driver_path = r"driver\chromedriver.exe"
+    # code_img_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\img\test001.png"
+    code_img_path = r"img\test001.png"
 else:
     driver_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + "/driver/chromedriver"
 
@@ -21,11 +29,15 @@ class FirstCase(unittest.TestCase):
         # cls.log = UserLog()
         # cls.logger = cls.log.get_log()
         cls.file_name = code_img_path
+        # get_log
+        cls.log = UserLog()
+        cls.logger = cls.log.get_log()
 
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=driver_path)
         self.driver.get('http://www.5itest.cn/register')
+        self.logger.info("this is chrome")
         self.driver.maximize_window()
         self.login = RegisterBusiness(self.driver)
 
@@ -37,11 +49,16 @@ class FirstCase(unittest.TestCase):
             if error:
                 # caseの名前を取得
                 case_name = self._testMethodName
-                file_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\report\%s.png" % case_name
+                # file_path = os.path.abspath(os.path.join(os.getcwd(), "..")) + r"\report\%s.png" % case_name
+                file_path =  r"report\%s.png" % case_name
                 self.driver.save_screenshot(file_path)
 
         self.driver.close()
         self.driver.quit()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.log.close_handle()
 
     def test_login_email_error(self):
         email_error = self.login.login_email_error('34hbu@aa.com', '111', '111', 'tets')
@@ -63,7 +80,7 @@ class FirstCase(unittest.TestCase):
         #     print("新規成功,case失敗")
 
     def test_login_password_error(self):
-        password_error = self.login.login_name_error('111@qq.com', 'ss22', '111111', self.file_name)
+        password_error = self.login.login_name_error('111@qq.com', 'ss22', '1111', self.file_name)
         self.assertFalse(password_error)
         # if password_error is True:
         #     print("新規成功,case失敗")
@@ -89,7 +106,8 @@ if __name__=='__main__':
     suite.addTest(FirstCase('test_login_password_error'))
     # unittest.TextTestRunner().run(suite)
     # unittest.main()
-    file_path = os.path.abspath(os.path.join(os.getcwd(), ".."))+r"\report\first_case.html"
+    # file_path = os.path.abspath(os.path.join(os.getcwd(), ".."))+r"\report\first_case.html"
+    file_path = r"report\first_case.html"
     file = open(file_path, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=file, title="This is first report",
                                   description="最初レポート", verbosity=2)

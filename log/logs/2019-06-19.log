@@ -1,0 +1,7 @@
+2019-06-19 22:22:04,516 first_case.py--> setUp 20: INFO --->this is chrome
+2019-06-19 22:36:01,419 first_case.py--> setUp 20: INFO --->this is chrome
+2019-06-19 22:36:23,583 first_case.py--> setUp 20: INFO --->this is chrome
+2019-06-19 22:36:46,923 first_case.py--> setUp 20: INFO --->this is chrome
+2019-06-19 22:36:55,035 connectionpool.py--> urlopen 30: WARNING --->Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A589F2208>: Failed to establish a new connection: [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。')': /session/fc83647f18accc2ccda5fd6ec909e874/screenshot
+2019-06-19 22:36:56,040 connectionpool.py--> urlopen 30: WARNING --->Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A589DBCC0>: Failed to establish a new connection: [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。')': /session/fc83647f18accc2ccda5fd6ec909e874/screenshot
+2019-06-19 22:36:57,041 connectionpool.py--> urlopen 30: WARNING --->Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A589DBB00>: Failed to establish a new connection: [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。')': /session/fc83647f18accc2ccda5fd6ec909e874/screenshot
