@@ -1,0 +1,3 @@
+
+class Goods(Model):
+    pass
