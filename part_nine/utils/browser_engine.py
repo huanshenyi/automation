@@ -30,11 +30,39 @@ class BrowserEngine:
         remote_browser_dict = basic_config.REMOTE_DRIVER_DICT
         # 返り値を保存, 構造{"名前":driver}
         result_dict = {}
-        for name,url in remote_browser_dict.items():
+        for name, url in remote_browser_dict.items():
             # ここではdriverのタイプも判断する必要がある
             option = webdriver.ChromeOptions()
             option.add_argument("disable-infobars")
             driver = webdriver.Remote(
+                options=option,
+                command_executor=url,
+                # ここでドライブを設定可能
+                desired_capabilities=DesiredCapabilities.CHROME
+            )
+            result_dict[name] = driver
+
+        return result_dict
+
+        # 関数を呼ぶ時にどのdriverを使用するのか,指定があった方がいい気がする
+
+    @staticmethod
+    def init_remote_driver_headless():
+        """
+        util関数,remoteのdriverを初期化
+        何を起動するのかは,basic_configで設定
+        詳細はbasic_configファイルに設置してある
+        :return: result_dict はdict,構造{"名前":driver}
+        """
+        remote_browser_dict = basic_config.REMOTE_DRIVER_DICT
+        # 返り値を保存, 構造{"名前":driver}
+        result_dict = {}
+        for name, url in remote_browser_dict.items():
+            # ここではdriverのタイプも判断する必要がある
+            option = webdriver.ChromeOptions()
+            option.add_argument("--headless")
+            driver = webdriver.Remote(
+                options=option,
                 command_executor=url,
                 # ここでドライブを設定可能
                 desired_capabilities=DesiredCapabilities.CHROME

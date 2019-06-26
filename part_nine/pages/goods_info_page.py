@@ -10,7 +10,6 @@ class GoodsInfoPage(BasePage):
     def __init__(self, driver):
         self._driver = driver
         super(GoodsInfoPage, self).__init__(driver, basic_config.START_URL)
-        self.logger("商品詳細画面初期化")
 
     def save_product_info(self):
         """

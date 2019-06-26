@@ -43,9 +43,9 @@ class BasePage(object):
             return self._init_wait(timeout).until(EC.visibility_of(element.find_element(*locator)))
         try:
             if wait_type == "visibility":
-                return self._init_wait(timeout).until(EC.visibility_of_element_located(*locator))
+                return self._init_wait(timeout).until(EC.visibility_of_element_located(locator=locator))
             else:
-                return self._init_wait(timeout).until(EC.presence_of_all_elements_located(*locator))
+                return self._init_wait(timeout).until(EC.presence_of_all_elements_located(locator=locator))
         except TimeoutException:
             if when_failed_close_browser:
                self._driver.quit()

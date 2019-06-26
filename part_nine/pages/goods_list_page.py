@@ -43,7 +43,7 @@ class GoodsListPage(BasePage):
 
     def get_select_page(self, selector_condition_list):
         """
-
+        複数の選択条件を選択
         :param selector_condition_list: 選択条件のリスト 例:[(By.ID,"id_value"),(By.name,"name_value")]
         リスト使用するのは順位変化しないためである
         :return:
