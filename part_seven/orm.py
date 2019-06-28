@@ -71,7 +71,52 @@ class Model(dict, metaclass=ModelMetaClass):
         conn = create_pool()
         cur = conn.cursor()
         print(sql)
-        rs = cur.execute(sql)
+        if 'select' in sql:
+            cur.execute(sql)
+            rs = cur.fetchall()
+        else:
+            rs = cur.execute(sql)
         conn.commit()
         cur.close()
         return rs
+
+    def select(self, column_list, where_list):
+        print("select関数を使用")
+        args = []
+        fields = []
+        for k, v in self.__mappings__.items():
+            fields.append(k)
+        for key in where_list:
+            args.append(key)
+        for key in column_list:
+            if key not in fields:
+                raise RuntimeError("field not found")
+        sql = 'select %s from %s where %' %(','.join(column_list), self.__tabel__, ' and '.join(args))
+        res = self.__do_execute(sql)
+        return res
+
+    def update(self, set_column_list, where_list):
+        print("update関数を使用")
+        args = []
+        fields = []
+        for key in set_column_list:
+            fields.append(key)
+        for key in where_list:
+            args.append(key)
+        for key in set_column_list:
+            if key not in fields:
+                raise RuntimeError("field not found")
+        sql = "update %s set %s where %s" %(self.__tabel, ','.join(set_column_list), ' and '.join(args))
+        res = self.__do_execute(sql)
+        return res
+
+    def delete(self, where_list):
+        print("delete関数を使用")
+        args = []
+        for key in where_list:
+            args.append(key)
+
+        sql = "delete from %s where %s" % (self.__tabel__, " and ".join(args))
+        res = self.__do_execute(sql)
+        return res
+
